@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 //importing zod
 const zod = require("zod");
-//importing User model from db.js
-const { User } = require("../db");
+//importing User and Account model from db.js
+const { User, Account } = require("../db");
 //importing jwt;
 const jwt = require("jsonwebtoken");
 //importing JWT_SECRET;
@@ -47,6 +47,13 @@ router.post("/", async (req, res) => {
   });
   //seperating the _id from the user
   const userId = user._id;
+
+  //assigning a random balance for every new user
+  await Account.create({
+    userId,
+    balance: 1 + Math.random() * 10000,
+  });
+
   //creating the user's token based on their _id
   const token = jwt.sign(
     {
