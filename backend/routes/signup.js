@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 //importing zod
 const zod = require("zod");
+
+// Middleware to parse JSON body
+router.use(express.json());
 //importing User and Account model from db.js
 const { User, Account } = require("../db");
 //importing jwt;
