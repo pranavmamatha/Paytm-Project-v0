@@ -57,7 +57,7 @@ router.post("/", async (req, res) => {
 
   //sending the response that the user as been created
   //with the JWT token
-  res.json({
+  res.status(200).json({
     message: "User Created Successfully",
     token: token,
   });
