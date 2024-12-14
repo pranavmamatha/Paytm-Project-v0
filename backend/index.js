@@ -12,4 +12,5 @@ app.use(express.json());
 //routing all the request from /api/v1 to router
 app.use("/api/v1", rootRouter);
 
-app.listen("3000");
+const port = 3000;
+app.listen(port, `Listening at ${port}`);
