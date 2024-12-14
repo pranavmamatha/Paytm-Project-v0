@@ -39,12 +39,11 @@ router.post("/", async (req, res) => {
       message: "Logged in successfully",
       token: token,
     });
-  } else {
-    //handlingl, if the user does not exist or the credentials or wrong
-    return res.status(401).json({
-      message: "invalid credentials / user does not exist",
-    });
   }
+  //handlingl, if the user does not exist or the credentials or wrong
+  return res.status(401).json({
+    message: "invalid credentials / user does not exist",
+  });
 });
 
 //exporting router
