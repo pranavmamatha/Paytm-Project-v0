@@ -4,8 +4,9 @@ const express = require("express");
 const router = express.Router();
 //importing sub route called user
 const userRouter = require("./user");
+const accountRouter = require("./account");
 //routing /user to userRouter
 router.use("/user", userRouter);
-
+router.use("/account", userRouter);
 //exporting the router
 module.exports = router;
