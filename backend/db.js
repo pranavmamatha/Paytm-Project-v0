@@ -1,6 +1,9 @@
 //importing mongoose
 const mongoose = require("mongoose");
-
+//connecting to mongodb
+mongoose.connect(
+  "mongodb+srv://admin:<db_password>@cluster0.uutzq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+);
 //mongoose schema for `user` table
 const userSchema = new mongoose.Schema({
   username: {
